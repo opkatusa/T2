@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T2 - AI Image Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✨ T2</h1>
+            <p class="subtitle">AI로 텍스트 프롬프트를 이미지로 변환하세요</p>
+        </div>
+
+        <div class="main-content">
+            <!-- 입력 섹션 -->
+            <div class="input-section">
+                <div class="control-group">
+                    <label for="prompt">이미지 설명 (프롬프트):</label>
+                    <textarea 
+                        id="prompt" 
+                        placeholder="예: 아름다운 산 풍경, 일몰, 반사되는 호수, 4k 품질"
+                        rows="4"
+                    ></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button id="generateBtn" class="btn btn-primary">🎨 이미지 생성</button>
+                    <button id="clearBtn" class="btn btn-secondary">초기화</button>
+                </div>
+
+                <!-- 에러 메시지 -->
+                <div id="errorMessage" class="error-message"></div>
+            </div>
+
+            <!-- 출력 섹션 -->
+            <div class="output-section">
+                <!-- 로딩 상태 -->
+                <div id="loadingContainer" class="loading-container hidden">
+                    <div class="spinner"></div>
+                    <p>AI가 이미지를 생성 중입니다...</p>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="statusText" class="status-text">준비 중...</p>
+                </div>
+
+                <!-- 이미지 표시 -->
+                <div id="imageContainer" class="image-container hidden">
+                    <img id="generatedImage" src="" alt="생성된 이미지">
+                    <div class="image-actions">
+                        <button id="downloadBtn" class="btn btn-primary">⬇️ 이미지 다운로드</button>
+                        <button id="copyPromptBtn" class="btn btn-secondary">📋 프롬프트 복사</button>
+                    </div>
+                </div>
+
+                <!-- 초기 상태 -->
+                <div id="welcomeContainer" class="welcome-container">
+                    <div class="welcome-content">
+                        <p>🖼️</p>
+                        <h2>프롬프트를 입력하고 생성을 누르세요!</h2>
+                        <p class="welcome-subtitle">Hugging Face AI가 당신의 상상을 이미지로 만들어줍니다</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 팁 섹션 -->
+        <div class="tips-section">
+            <h3>💡 프롬프트 작성 팁:</h3>
+            <ul>
+                <li>구체적으로 작성하세요: "빨간 자동차" 보다는 "빨간 페라리가 산 위의 해질녘 도로를 달리고 있는 모습"</li>
+                <li>스타일을 명시하세요: "유화 스타일", "사진", "3D 렌더링" 등</li>
+                <li>품질을 언급하세요: "4K", "고품질", "상세한" 등</li>
+                <li>조명과 분위기를 설명하세요: "황금빛 시간대", "극적인 조명" 등</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
