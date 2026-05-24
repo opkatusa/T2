@@ -1,5 +1,5 @@
 // ⚠️ 중요: API 키 설정
-const API_TOKEN = 'YOUR_HUGGING_FACE_API_KEY_HERE';
+const API_TOKEN = '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';
 const API_URL = 'https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2';
 
 // DOM 요소 선택
